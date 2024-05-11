@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bạn có thích tôi không?</title>
+    <meta charset="UTF-8">
+    <style>
+        #yesButton {
+            padding: 10px;
+            font-size: 25pt;
+        }
+        #noButton {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+    <script>
+        function response(answer) {
+            if (answer) {
+                alert('Cảm ơn bạn!');
+            } else {
+                alert('Rất tiếc!');
+            }
+        }
+
+        function moveButton() {
+            var noButton = document.getElementById('noButton');
+            noButton.style.top = Math.random() * window.innerHeight + 'px';
+            noButton.style.left = Math.random() * window.innerWidth + 'px';
+        }
+    </script>
+</head>
+<body>
+    <h1>Bạn có thích tôi không?</h1>
+    <button id="yesButton" onclick="response(true)">Có</button>
+    <button id="noButton" onmouseover="moveButton()" onclick="response(false)">Không</button>
+</body>
+</html>
